@@ -1,6 +1,6 @@
 :root { color-scheme: light; --ink:#1F2A44; --card:#FFFDF7; --edge:#CFC3A5; --green:#4CC854; --green-edge:#2E8F3A; --gold:#F0A800; }
 * { box-sizing: border-box; }
-body { margin:0; font:17px/1.65 "Nunito",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; color:var(--ink);
+body { margin:0; font:17px/1.65 "Nunito",system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink);
   background:#9EDCFF; background-image:linear-gradient(180deg,#4FB2FF 0%,#9EDCFF 22%,#D6F3C4 60%,#5FC24F 100%); background-attachment:fixed; min-height:100vh; }
 h1,h2,h3,.brand { font-family:"Baloo 2","Nunito",system-ui,sans-serif; line-height:1.15; }
 .wrap { max-width:900px; margin:0 auto; padding:0 20px; }
