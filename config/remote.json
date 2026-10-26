@@ -1,1 +1,44 @@
-{ "version": 0 }
+{
+  "ads": {
+    "banner_enabled": true,
+    "interstitial_cooldown_after_rewarded_s": 90.0,
+    "interstitial_cooldown_later_s": 90.0,
+    "interstitial_cooldown_week1_s": 120.0,
+    "interstitial_cooldown_week2_s": 100.0,
+    "interstitial_early_gap_s": 180.0,
+    "interstitial_fail_only_until": 25,
+    "interstitial_hot_brush_block": 3,
+    "interstitial_max_per_window": 8,
+    "interstitial_min_interval_s": 60.0,
+    "interstitial_min_level": 12,
+    "interstitial_win_every_levels": 2,
+    "interstitial_window_s": 1800.0,
+    "play_banner_enabled": true,
+    "play_banner_min_level": 6,
+    "set_end_only_if_puzzle_end_skipped": true
+  },
+  "daily": {
+    "calendar_extension_url": ""
+  },
+  "features": {
+    "league_enabled": true,
+    "share_enabled": true,
+    "zen_enabled": true
+  },
+  "house": {
+    "banner_rotate_s": 15
+  },
+  "league": {
+    "retry_per_day": 1,
+    "reward_coins": 500,
+    "size": 50,
+    "top_rewarded": 10
+  },
+  "min_supported_build": 0,
+  "min_supported_build_android": 0,
+  "starter_offer": {
+    "after_interstitials": 2,
+    "window_s": 172800
+  },
+  "version": 0
+}
