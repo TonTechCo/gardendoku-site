@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gardendoku challenge</title>
+<meta name="description" content="A friend challenged you to a Gardendoku puzzle. Enter the code in the game and beat their time.">
+<meta name="theme-color" content="#4FB2FF">
+<meta property="og:title" content="Can you beat me? A Gardendoku challenge">
+<meta property="og:description" content="Open Gardendoku, tap Friends and enter the code to play the same puzzle against my time.">
+<meta property="og:image" content="https://tontechco.github.io/gardendoku-site/assets/icon.png">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+.code { font-family:"Baloo 2","Nunito",system-ui,sans-serif; font-size:clamp(2.2rem,10vw,3.4rem); font-weight:800; letter-spacing:.06em;
+  text-align:center; background:#fff; border:3px solid var(--edge); border-radius:18px; padding:14px 18px; margin:14px 0 8px; direction:ltr; user-select:all; }
+.copy { display:block; margin:0 auto 6px; }
+.steps { padding-left:1.3em; }
+.steps li { margin:.5em 0; }
+.hint { color:#5a6478; font-size:.95rem; text-align:center; }
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="brand" href="../">Gardendoku</a>
+<nav><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="../support/">Support</a></nav></div></header>
+<main class="wrap">
+<div class="panel">
+<h1>Can you beat me?</h1>
+<p>A friend solved a Gardendoku puzzle and wants to see if you can do it faster. Your challenge code:</p>
+<div class="code" id="code">····</div>
+<button class="badge copy" id="copy" type="button">Copy code</button>
+<p class="hint" id="copied"></p>
+<h2>How to play it</h2>
+<ol class="steps">
+<li>Open Gardendoku. Don't have it yet? Get it below, it's free.</li>
+<li>On the Home screen tap <strong>Friends</strong>.</li>
+<li>Tap <strong>Paste</strong> (or type the code), then <strong>Play the challenge</strong>.</li>
+</ol>
+<p>You play the exact same puzzle. Beat their time and send the challenge straight back.</p>
+<div class="badges">
+<a class="badge" href="https://apps.apple.com/app/id6827605328?ct=challenge&mt=8">Download on the App Store</a>
+<a class="badge" href="../" title="Coming soon">Google Play: coming soon</a>
+</div>
+</div>
+</main>
+<footer><div class="wrap"><a href="../privacy/">Privacy</a> &nbsp;&middot;&nbsp; <a href="../terms/">Terms</a> &nbsp;&middot;&nbsp; <a href="../support/">Support</a><br>&copy; 2026 TonTech &middot; info@tontech.co</div></footer>
+<script>
+(function () {
+  // The code is the only thing in the link (no names, nothing personal): letters, digits, one dash.
+  var raw = new URLSearchParams(location.search).get("c") || "";
+  var code = raw.toUpperCase().replace(/[^0-9A-Z-]/g, "").slice(0, 12);
+  var box = document.getElementById("code");
+  var copy = document.getElementById("copy");
+  var note = document.getElementById("copied");
+  if (!code) {
+    box.textContent = "No code in this link";
+    copy.style.display = "none";
+    note.textContent = "Ask your friend to send the challenge again from the game's results screen.";
+    return;
+  }
+  box.textContent = code;
+  copy.addEventListener("click", function () {
+    var done = function () { note.textContent = "Copied. Now open Gardendoku, tap Friends, then Paste."; };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(code).then(done, function () { note.textContent = "Select the code above and copy it."; });
+    } else {
+      note.textContent = "Select the code above and copy it.";
+    }
+  });
+})();
+</script>
+</body>
+</html>
